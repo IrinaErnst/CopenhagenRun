@@ -1,0 +1,6 @@
+framework module Pods_CopenhagenRun {
+  umbrella header "Pods-CopenhagenRun-umbrella.h"
+
+  export *
+  module * { export * }
+}

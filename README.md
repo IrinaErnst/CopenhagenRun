@@ -1,3 +1,1 @@
 # Copenhagen Run
-
-# iOS Application
