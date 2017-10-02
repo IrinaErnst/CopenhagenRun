@@ -1,9 +1,8 @@
 PODS:
   - Alamofire (4.5.1)
-  - Bolts/Tasks (1.8.4)
-  - Crashlytics (3.8.5):
+  - Crashlytics (3.8.6):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.12)
+  - Fabric (1.6.13)
   - JASON (3.1)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
@@ -16,10 +15,9 @@ PODS:
   - RealmSwift (2.10.2):
     - Realm (= 2.10.2)
   - Result (3.2.4)
-  - UICircularProgressRing (1.6.2)
+  - UICircularProgressRing (1.7.4)
 
 DEPENDENCIES:
-  - Bolts/Tasks
   - Crashlytics
   - Fabric
   - JASON (~> 3.1)
@@ -30,16 +28,15 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
   JASON: c1204b01c9979eef35b6948ca939aac5e7bef081
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  UICircularProgressRing: f25e366e0624d87973192b67e572c0712acbae85
+  UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
 
-PODFILE CHECKSUM: 951e83309f1fa5965872c633a598b9e2614d548a
+PODFILE CHECKSUM: 6d3c9892ac55aa81c18c1d15fa92a9cef5d1b9ee
 
 COCOAPODS: 1.1.1
