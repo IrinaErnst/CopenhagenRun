@@ -15,6 +15,13 @@
 		8C4F55B21F1AECE60084009F /* CopenhagenRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F55B11F1AECE60084009F /* CopenhagenRunTests.swift */; };
 		8C4F55BD1F1AECE60084009F /* CopenhagenRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F55BC1F1AECE60084009F /* CopenhagenRunUITests.swift */; };
 		97F91FA92B078449760D9084 /* Pods_CopenhagenRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC7A913236C4E397DD472C /* Pods_CopenhagenRun.framework */; };
+		A72815FE1F82DB6F00B44712 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72815FD1F82DB6F00B44712 /* Login.storyboard */; };
+		A72816001F82DBFD00B44712 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72815FF1F82DBFD00B44712 /* Colors.swift */; };
+		A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72816041F82DDB200B44712 /* LoggerPlugin.swift */; };
+		A72816091F82DE1F00B44712 /* RealmDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72816081F82DE1F00B44712 /* RealmDataStoreType.swift */; };
+		A728160C1F82DE5500B44712 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A728160B1F82DE5500B44712 /* Deserializable.swift */; };
+		A728160E1F82DEAD00B44712 /* RealmDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A728160D1F82DEAD00B44712 /* RealmDataStore.swift */; };
+		A72816111F82DEE400B44712 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72816101F82DEE400B44712 /* DefaultAlamofireManager.swift */; };
 		C90411439ECC652C3FBB6EAD /* Pods_CopenhagenRunTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66228CF5B565A47E3FE35AF /* Pods_CopenhagenRunTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +61,13 @@
 		8C4F55BC1F1AECE60084009F /* CopenhagenRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopenhagenRunUITests.swift; sourceTree = "<group>"; };
 		8C4F55BE1F1AECE60084009F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981136EF53BC2DA7B6688E0C /* Pods-CopenhagenRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRun/Pods-CopenhagenRun.debug.xcconfig"; sourceTree = "<group>"; };
+		A72815FD1F82DB6F00B44712 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A72815FF1F82DBFD00B44712 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A72816041F82DDB200B44712 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		A72816081F82DE1F00B44712 /* RealmDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStoreType.swift; sourceTree = "<group>"; };
+		A728160B1F82DE5500B44712 /* Deserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
+		A728160D1F82DEAD00B44712 /* RealmDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStore.swift; sourceTree = "<group>"; };
+		A72816101F82DEE400B44712 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
 		C66228CF5B565A47E3FE35AF /* Pods_CopenhagenRunTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopenhagenRunTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,10 +144,11 @@
 			isa = PBXGroup;
 			children = (
 				8C4F559C1F1AECE50084009F /* AppDelegate.swift */,
-				8C4F559E1F1AECE50084009F /* ViewController.swift */,
-				8C4F55A01F1AECE50084009F /* Main.storyboard */,
-				8C4F55A31F1AECE50084009F /* Assets.xcassets */,
-				8C4F55A51F1AECE50084009F /* LaunchScreen.storyboard */,
+				A72816011F82DCA000B44712 /* Common */,
+				A728160A1F82DE2D00B44712 /* Protocols */,
+				A728160F1F82DEBA00B44712 /* Services */,
+				A72816021F82DCAB00B44712 /* ViewControllers */,
+				A72816031F82DCC200B44712 /* Resourses */,
 				8C4F55A81F1AECE50084009F /* Info.plist */,
 			);
 			path = CopenhagenRun;
@@ -155,6 +170,52 @@
 				8C4F55BE1F1AECE60084009F /* Info.plist */,
 			);
 			path = CopenhagenRunUITests;
+			sourceTree = "<group>";
+		};
+		A72816011F82DCA000B44712 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A72815FF1F82DBFD00B44712 /* Colors.swift */,
+				A72816041F82DDB200B44712 /* LoggerPlugin.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A72816021F82DCAB00B44712 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C4F559E1F1AECE50084009F /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A72816031F82DCC200B44712 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				8C4F55A01F1AECE50084009F /* Main.storyboard */,
+				A72815FD1F82DB6F00B44712 /* Login.storyboard */,
+				8C4F55A31F1AECE50084009F /* Assets.xcassets */,
+				8C4F55A51F1AECE50084009F /* LaunchScreen.storyboard */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		A728160A1F82DE2D00B44712 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A72816081F82DE1F00B44712 /* RealmDataStoreType.swift */,
+				A728160B1F82DE5500B44712 /* Deserializable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A728160F1F82DEBA00B44712 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A728160D1F82DEAD00B44712 /* RealmDataStore.swift */,
+				A72816101F82DEE400B44712 /* DefaultAlamofireManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72815FE1F82DB6F00B44712 /* Login.storyboard in Resources */,
 				8C4F55A71F1AECE50084009F /* LaunchScreen.storyboard in Resources */,
 				8C4F55A41F1AECE50084009F /* Assets.xcassets in Resources */,
 				8C4F55A21F1AECE50084009F /* Main.storyboard in Resources */,
@@ -311,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4723A1BD466DF6FA130875AF /* [CP] Embed Pods Frameworks */ = {
@@ -344,7 +406,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0E7CDB0882AD8292B14627B /* [CP] Embed Pods Frameworks */ = {
@@ -410,7 +472,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72816111F82DEE400B44712 /* DefaultAlamofireManager.swift in Sources */,
+				A72816091F82DE1F00B44712 /* RealmDataStoreType.swift in Sources */,
+				A728160E1F82DEAD00B44712 /* RealmDataStore.swift in Sources */,
+				A728160C1F82DE5500B44712 /* Deserializable.swift in Sources */,
+				A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */,
 				8C4F559F1F1AECE50084009F /* ViewController.swift in Sources */,
+				A72816001F82DBFD00B44712 /* Colors.swift in Sources */,
 				8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,6 +736,7 @@
 				8C4F55C31F1AECE60084009F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C4F55C41F1AECE60084009F /* Build configuration list for PBXNativeTarget "CopenhagenRunTests" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +745,7 @@
 				8C4F55C61F1AECE60084009F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C4F55C71F1AECE60084009F /* Build configuration list for PBXNativeTarget "CopenhagenRunUITests" */ = {
 			isa = XCConfigurationList;
@@ -684,6 +754,7 @@
 				8C4F55C91F1AECE60084009F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
