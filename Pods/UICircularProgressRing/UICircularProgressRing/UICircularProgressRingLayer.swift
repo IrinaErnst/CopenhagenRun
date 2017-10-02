@@ -71,6 +71,7 @@ class UICircularProgressRingLayer: CAShapeLayer {
     @NSManaged var fullCircle: Bool
     
     @NSManaged var value: CGFloat
+    @NSManaged var minValue: CGFloat
     @NSManaged var maxValue: CGFloat
     
     @NSManaged var ringStyle: UICircularProgressRingStyle
@@ -168,12 +169,12 @@ class UICircularProgressRingLayer: CAShapeLayer {
     private func drawOuterRing() {
         guard outerRingWidth > 0 else { return }
         
-        let width = bounds.width
-        let height = bounds.width
-        let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        let outerRadius = max(width, height)/2 - outerRingWidth/2
-        let start = fullCircle ? 0 : startAngle.toRads
-        let end = fullCircle ? CGFloat.pi * 2 : endAngle.toRads
+        let width: CGFloat = bounds.width
+        let height: CGFloat = bounds.width
+        let center: CGPoint = CGPoint(x: bounds.midX, y: bounds.midY)
+        let outerRadius: CGFloat = max(width, height)/2 - max(outerRingWidth, innerRingWidth)/2
+        let start: CGFloat = fullCircle ? 0 : startAngle.toRads
+        let end: CGFloat = fullCircle ? CGFloat.pi * 2 : endAngle.toRads
         
         let outerPath = UIBezierPath(arcCenter: center,
                                      radius: outerRadius,
@@ -211,20 +212,17 @@ class UICircularProgressRingLayer: CAShapeLayer {
     private func drawInnerRing(in ctx: CGContext) {
         guard innerRingWidth > 0 else { return }
         
-        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let center: CGPoint = CGPoint(x: bounds.midX, y: bounds.midY)
         
-        var innerEndAngle: CGFloat = 0.0
+        let innerEndAngle: CGFloat
         
         if fullCircle {
-            innerEndAngle = (360.0 / CGFloat(maxValue))
-                            * CGFloat(value) + startAngle
+            innerEndAngle = (value - minValue) / (maxValue - minValue) * 360.0 + startAngle
         } else {
             // Calculate the center difference between the end and start angle
-            let angleDiff: CGFloat = endAngle - startAngle
+            let angleDiff: CGFloat = (startAngle > endAngle) ? (360.0 - startAngle + endAngle) : (endAngle - startAngle) 
             // Calculate how much we should draw depending on the value set
-            let arcLenPerValue = angleDiff / CGFloat(maxValue)
-            // The inner end angle some basic math is done
-            innerEndAngle = arcLenPerValue * CGFloat(value) + startAngle
+            innerEndAngle = (value - minValue) / (maxValue - minValue) * angleDiff + startAngle
         }
         
         // The radius for style 1 is set below
@@ -236,19 +234,19 @@ class UICircularProgressRingLayer: CAShapeLayer {
         switch ringStyle {
             
         case .inside:
-            let difference = outerRingWidth*2 - innerRingSpacing
+            let difference: CGFloat = outerRingWidth*2 - innerRingSpacing
             radiusIn = (max(bounds.width - difference,
                             bounds.height - difference)/2) - innerRingWidth/2
         default:
-            radiusIn = (max(bounds.width, bounds.height)/2) - (outerRingWidth/2)
+            radiusIn = (max(bounds.width, bounds.height)/2) - (max(outerRingWidth, innerRingWidth)/2)
         }
         
         // Start drawing
-        let innerPath = UIBezierPath(arcCenter: center,
-                                     radius: radiusIn,
-                                     startAngle: startAngle.toRads,
-                                     endAngle: innerEndAngle.toRads,
-                                     clockwise: true)
+        let innerPath: UIBezierPath = UIBezierPath(arcCenter: center,
+                                                   radius: radiusIn,
+                                                   startAngle: startAngle.toRads,
+                                                   endAngle: innerEndAngle.toRads,
+                                                   clockwise: true)
         
         // Draw path
         ctx.setLineWidth(innerRingWidth)
@@ -260,14 +258,15 @@ class UICircularProgressRingLayer: CAShapeLayer {
         
         if ringStyle == .gradient && gradientColors.count > 1 {
             // Create gradient and draw it
-            var cgColors = [CGColor]()
-            for color in gradientColors {
+            var cgColors: [CGColor] = [CGColor]()
+            for color: UIColor in gradientColors {
                 cgColors.append(color.cgColor)
             }
             
-            guard let gradient = CGGradient(colorsSpace: nil,
-                                      colors: cgColors as CFArray,
-                                      locations: gradientColorLocations) else {
+            guard let gradient: CGGradient = CGGradient(colorsSpace: nil,
+                                                        colors: cgColors as CFArray,
+                                                        locations: gradientColorLocations)
+            else {
                 fatalError("\nUnable to create gradient for progress ring.\n" +
                     "Check values of gradientColors and gradientLocations.\n")
             }
@@ -277,10 +276,8 @@ class UICircularProgressRingLayer: CAShapeLayer {
             ctx.replacePathWithStrokedPath()
             ctx.clip()
             
-            drawGradient(gradient,
-                         start: gradientStartPosition,
-                         end: gradientEndPosition,
-                         inContext: ctx)
+            drawGradient(gradient, start: gradientStartPosition,
+                         end: gradientEndPosition, inContext: ctx)
             
             ctx.restoreGState()
         }

@@ -1,6 +1,6 @@
 ![Banner](https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/banner.png)
 
-<h3 align="center">A circular progress bar for iOS written in Swift 3</h3>
+<h3 align="center">A circular progress bar for iOS written in Swift</h3>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/demo.gif"/>  
@@ -8,14 +8,13 @@
 
 ![Styles](https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/styles-banner.png)
 
-### _Looking for awesome people to help maintain and contribute_
-
 ## Features
 
 * Interface builder designable
-* Highly customizable 
-* Animation for progress and value text built in
-* Written in Swift 3 and using Xcode 8
+* Highly customizable and flexible
+* Easy to use
+* Sleek animations
+* Written in Swift
 
 ## Installation 
 
@@ -35,20 +34,6 @@
 3. Run `pod install`
 4. Open up the `.xcworkspace` that CocoaPods created
 5. Done!
-
-__Note:__ If you have any issues with Swift 3 and CocoaPods you can try to force the version. (Cocoapods support for Swift 3 projects has been a bit wonky).
-
-Add this to the end of your `Podfile`
-
-```ruby
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |configuration|
-      configuration.build_settings['SWIFT_VERSION'] = "3.0"
-    end
-  end
-end
-```
 
 ### Carthage
 
@@ -80,7 +65,7 @@ Design your heart out
 
 ![ib-demo.gif](https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/ib-demo.gif)
 
-### Code
+### Usage
 
 ```swift
 override func viewDidLoad() {
@@ -118,15 +103,6 @@ Take a look at the example project over [here](Example/)
 2. Open the `Example.xcworkspace` in Xcode
 3. Mess around and experiment!
 
+## Misc.
 
-## License
-
-```
-Copyright (c) 2016 Luis Padron
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
+Do you use this library? Want to be featured? Go [here.](https://github.com/luispadron/UICircularProgressRing/issues/54)
