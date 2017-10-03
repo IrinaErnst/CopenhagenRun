@@ -9,33 +9,56 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialBold.ttf">
+            <string>Arial-BoldMT</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="kEV-Yz-5W3">
             <objects>
-                <viewController id="Jtm-6L-9kb" sceneMemberID="viewController">
+                <viewController id="Jtm-6L-9kb" customClass="LoginViewController" customModule="CopenhagenRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JyF-OJ-ZFX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C7i-G1-Rd0">
-                                <rect key="frame" x="139" y="251" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrX-n6-UnY">
-                                <rect key="frame" x="139" y="318" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copenhagen Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqO-1u-RAn">
+                                <rect key="frame" x="20" y="70" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EXT-O5-5lE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                <color key="textColor" red="0.32156862745098036" green="0.94117647058823528" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rz2-2f-eXi">
+                                <rect key="frame" x="20" y="120" width="335" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="31U-wR-JDC"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Login"/>
+                                    <segment title="Sign up"/>
+                                </segments>
+                                <color key="tintColor" red="0.36447012424468994" green="0.93850082159042358" blue="0.68794441223144531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eqO-1u-RAn" firstAttribute="leading" secondItem="WUf-AP-ktq" secondAttribute="leading" constant="20" id="BFR-D5-rNS"/>
+                            <constraint firstItem="WUf-AP-ktq" firstAttribute="trailing" secondItem="eqO-1u-RAn" secondAttribute="trailing" constant="20" id="Kyr-mG-XuX"/>
+                            <constraint firstItem="eqO-1u-RAn" firstAttribute="top" secondItem="WUf-AP-ktq" secondAttribute="top" constant="50" id="OQJ-XM-e17"/>
+                            <constraint firstItem="Rz2-2f-eXi" firstAttribute="top" secondItem="eqO-1u-RAn" secondAttribute="bottom" constant="10" id="cGz-E5-313"/>
+                            <constraint firstItem="Rz2-2f-eXi" firstAttribute="leading" secondItem="WUf-AP-ktq" secondAttribute="leading" constant="20" id="dQy-63-zsw"/>
+                            <constraint firstItem="WUf-AP-ktq" firstAttribute="trailing" secondItem="Rz2-2f-eXi" secondAttribute="trailing" constant="20" id="v7m-PJ-k46"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WUf-AP-ktq"/>
                     </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Rz2-2f-eXi" id="Plz-Q3-gNU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bd-l7-b00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
