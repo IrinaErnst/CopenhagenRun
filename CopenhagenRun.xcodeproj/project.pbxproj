@@ -289,7 +289,7 @@
 				TargetAttributes = {
 					8C4F55981F1AECE50084009F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = B9NU7FF5WD;
+						DevelopmentTeam = AQ88PA37SU;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -646,7 +646,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B9NU7FF5WD;
+				DEVELOPMENT_TEAM = AQ88PA37SU;
 				INFOPLIST_FILE = CopenhagenRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ernst.CopenhagenRun;
@@ -661,7 +661,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B9NU7FF5WD;
+				DEVELOPMENT_TEAM = AQ88PA37SU;
 				INFOPLIST_FILE = CopenhagenRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ernst.CopenhagenRun;
