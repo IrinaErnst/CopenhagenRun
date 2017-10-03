@@ -16,6 +16,7 @@
 		8C4F55BD1F1AECE60084009F /* CopenhagenRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F55BC1F1AECE60084009F /* CopenhagenRunUITests.swift */; };
 		97F91FA92B078449760D9084 /* Pods_CopenhagenRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC7A913236C4E397DD472C /* Pods_CopenhagenRun.framework */; };
 		A727857B1F84131E0042878B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727857A1F84131E0042878B /* LoginViewController.swift */; };
+		A727857F1F8418B20042878B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727857E1F8418B20042878B /* UIView.swift */; };
 		A72815FE1F82DB6F00B44712 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72815FD1F82DB6F00B44712 /* Login.storyboard */; };
 		A72816001F82DBFD00B44712 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72815FF1F82DBFD00B44712 /* Colors.swift */; };
 		A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72816041F82DDB200B44712 /* LoggerPlugin.swift */; };
@@ -62,6 +63,7 @@
 		8C4F55BE1F1AECE60084009F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981136EF53BC2DA7B6688E0C /* Pods-CopenhagenRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRun/Pods-CopenhagenRun.debug.xcconfig"; sourceTree = "<group>"; };
 		A727857A1F84131E0042878B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A727857E1F8418B20042878B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A72815FD1F82DB6F00B44712 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A72815FF1F82DBFD00B44712 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A72816041F82DDB200B44712 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8C4F559C1F1AECE50084009F /* AppDelegate.swift */,
+				A72785801F8418B60042878B /* Extentions */,
 				A72816011F82DCA000B44712 /* Common */,
 				A728160A1F82DE2D00B44712 /* Protocols */,
 				A728160F1F82DEBA00B44712 /* Services */,
@@ -170,6 +173,14 @@
 				8C4F55BE1F1AECE60084009F /* Info.plist */,
 			);
 			path = CopenhagenRunUITests;
+			sourceTree = "<group>";
+		};
+		A72785801F8418B60042878B /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				A727857E1F8418B20042878B /* UIView.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		A72816011F82DCA000B44712 /* Common */ = {
@@ -482,6 +493,7 @@
 				A727857B1F84131E0042878B /* LoginViewController.swift in Sources */,
 				8C4F559F1F1AECE50084009F /* ViewController.swift in Sources */,
 				A72816001F82DBFD00B44712 /* Colors.swift in Sources */,
+				A727857F1F8418B20042878B /* UIView.swift in Sources */,
 				8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

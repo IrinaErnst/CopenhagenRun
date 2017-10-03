@@ -14,7 +14,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let inputContainerView = UIView()
+        inputContainerView.backgroundColor = Colors.white
         
+        view.addSubview(inputContainerView)
         
     }
 
