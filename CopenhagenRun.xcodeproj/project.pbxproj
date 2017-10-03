@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455106F31F840CDE00AAC254 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455106F21F840CDE00AAC254 /* Workout.swift */; };
+		455106F51F8414A100AAC254 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455106F41F8414A100AAC254 /* User.swift */; };
 		8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F559C1F1AECE50084009F /* AppDelegate.swift */; };
 		8C4F559F1F1AECE50084009F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F559E1F1AECE50084009F /* ViewController.swift */; };
 		8C4F55A21F1AECE50084009F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4F55A01F1AECE50084009F /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		07DC7A913236C4E397DD472C /* Pods_CopenhagenRun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopenhagenRun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CEA5F43497179C6B874A874 /* Pods-CopenhagenRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRun/Pods-CopenhagenRun.release.xcconfig"; sourceTree = "<group>"; };
+		455106F21F840CDE00AAC254 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		455106F41F8414A100AAC254 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65704CCE955350F3A6A0B6B8 /* Pods-CopenhagenRunTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRunTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRunTests/Pods-CopenhagenRunTests.release.xcconfig"; sourceTree = "<group>"; };
 		78898353B33F01C9AAFEB079 /* Pods-CopenhagenRunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRunTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRunTests/Pods-CopenhagenRunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C4F55991F1AECE50084009F /* CopenhagenRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopenhagenRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		455106F11F840C7600AAC254 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				455106F21F840CDE00AAC254 /* Workout.swift */,
+				455106F41F8414A100AAC254 /* User.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		8C4F55901F1AECE50084009F = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +157,7 @@
 			children = (
 				8C4F559C1F1AECE50084009F /* AppDelegate.swift */,
 				A72816011F82DCA000B44712 /* Common */,
+				455106F11F840C7600AAC254 /* Models */,
 				A728160A1F82DE2D00B44712 /* Protocols */,
 				A728160F1F82DEBA00B44712 /* Services */,
 				A72816021F82DCAB00B44712 /* ViewControllers */,
@@ -475,7 +490,9 @@
 				A72816111F82DEE400B44712 /* DefaultAlamofireManager.swift in Sources */,
 				A72816091F82DE1F00B44712 /* RealmDataStoreType.swift in Sources */,
 				A728160E1F82DEAD00B44712 /* RealmDataStore.swift in Sources */,
+				455106F31F840CDE00AAC254 /* Workout.swift in Sources */,
 				A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */,
+				455106F51F8414A100AAC254 /* User.swift in Sources */,
 				8C4F559F1F1AECE50084009F /* ViewController.swift in Sources */,
 				A72816001F82DBFD00B44712 /* Colors.swift in Sources */,
 				8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */,
