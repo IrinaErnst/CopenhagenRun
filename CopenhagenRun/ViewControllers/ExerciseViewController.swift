@@ -12,6 +12,7 @@ import UICircularProgressRing
 class ExerciseViewController: UIViewController {
 
     // MARK: - IBOutlets
+    @IBOutlet weak var cycleCollectionView: UICollectionView!
     @IBOutlet weak var progressRing: UICircularProgressRingView!
     
     // MARK: - Properties
@@ -21,6 +22,10 @@ class ExerciseViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Register cycle cell nib with the cycle collection view
+        let cycleNib = UINib(nibName: "CycleCollectionViewCell", bundle: nil)
+        cycleCollectionView.register(cycleNib, forCellWithReuseIdentifier: "cycleCell")
         
         let progressRing = UICircularProgressRingView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         progressRing.animationStyle = kCAMediaTimingFunctionLinear
@@ -103,7 +108,7 @@ extension ExerciseViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cycleCell", for: indexPath) as! CycleCollectionViewCell
         
         return cell
     }
