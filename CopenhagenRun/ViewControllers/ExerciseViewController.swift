@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ExerciseViewController.swift
 //  CopenhagenRun
 //
 //  Created by Irina Ernst on 7/15/17.
@@ -9,16 +9,23 @@
 import UIKit
 import UICircularProgressRing
 
-class ViewController: UIViewController, UICircularProgressRingDelegate {
+class ExerciseViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var cycleCollectionView: UICollectionView!
     @IBOutlet weak var progressRing: UICircularProgressRingView!
     
+    // MARK: - Properties
     let progressRing1: UICircularProgressRingView? = UICircularProgressRingView()
     let progressRing2: UICircularProgressRingView? = UICircularProgressRingView()
     
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Register cycle cell nib with the cycle collection view
+        let cycleNib = UINib(nibName: "CycleCollectionViewCell", bundle: nil)
+        cycleCollectionView.register(cycleNib, forCellWithReuseIdentifier: "cycleCell")
         
         let progressRing = UICircularProgressRingView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         progressRing.animationStyle = kCAMediaTimingFunctionLinear
@@ -55,6 +62,7 @@ class ViewController: UIViewController, UICircularProgressRingDelegate {
         progressRing.delegate = self
     }
     
+    // MARK: - IBActions
     @IBAction func startButtonPressed(_ sender: Any) {
         
         // Animate the views
@@ -80,16 +88,37 @@ class ViewController: UIViewController, UICircularProgressRingDelegate {
         // This has a max value of 10 so we set this accordingly and the view calculates how the progress should look
        // ring3.setProgress(value: 6.52, animationDuration: 6)
     }
-        
+    
+    
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// MARK: - Collection View Delegate
+extension ExerciseViewController: UICollectionViewDelegate, UICollectionViewDataSource /*UICollectionViewDelegateFlowLayout*/ {
+    
+    // For now this is set in IB but considering different sizes it will have to be in code
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let cellWidth = collectionView.frame.width/6 // we make room for 6 cells to be visible at any time
+//
+//        return CGSize(width: cellWidth, height: cellWidth)
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6 // Default would be 4, but user could change it
     }
     
-    // The delegate method!
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cycleCell", for: indexPath) as! CycleCollectionViewCell
+        
+        return cell
+    }
+}
+
+// MARK: - Circular Progress Delegate
+extension ExerciseViewController: UICircularProgressRingDelegate {
+    
     func finishedUpdatingProgress(forRing ring: UICircularProgressRingView) {
         print("From delegate: Ring finished. YAY")
     }
 }
-
