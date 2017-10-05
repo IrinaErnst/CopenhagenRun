@@ -21,6 +21,9 @@
 		8C4F55BD1F1AECE60084009F /* CopenhagenRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F55BC1F1AECE60084009F /* CopenhagenRunUITests.swift */; };
 		97F91FA92B078449760D9084 /* Pods_CopenhagenRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DC7A913236C4E397DD472C /* Pods_CopenhagenRun.framework */; };
 		A727857B1F84131E0042878B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727857A1F84131E0042878B /* LoginViewController.swift */; };
+		A727857F1F8418B20042878B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727857E1F8418B20042878B /* UIView.swift */; };
+		A72785841F86D0590042878B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72785831F86D0590042878B /* GoogleService-Info.plist */; };
+		A72785861F86D12F0042878B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72785851F86D12F0042878B /* Constants.swift */; };
 		A72815FE1F82DB6F00B44712 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72815FD1F82DB6F00B44712 /* Login.storyboard */; };
 		A72816001F82DBFD00B44712 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72815FF1F82DBFD00B44712 /* Colors.swift */; };
 		A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72816041F82DDB200B44712 /* LoggerPlugin.swift */; };
@@ -72,6 +75,9 @@
 		8C4F55BE1F1AECE60084009F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981136EF53BC2DA7B6688E0C /* Pods-CopenhagenRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRun/Pods-CopenhagenRun.debug.xcconfig"; sourceTree = "<group>"; };
 		A727857A1F84131E0042878B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A727857E1F8418B20042878B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A72785831F86D0590042878B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A72785851F86D12F0042878B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A72815FD1F82DB6F00B44712 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A72815FF1F82DBFD00B44712 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A72816041F82DDB200B44712 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				8C4F559C1F1AECE50084009F /* AppDelegate.swift */,
+				A72785801F8418B60042878B /* Extentions */,
 				A72816011F82DCA000B44712 /* Common */,
 				455106F11F840C7600AAC254 /* Models */,
 				A728160A1F82DE2D00B44712 /* Protocols */,
@@ -181,6 +188,7 @@
 				A72816021F82DCAB00B44712 /* ViewControllers */,
 				A72816031F82DCC200B44712 /* Resourses */,
 				8C4F55A81F1AECE50084009F /* Info.plist */,
+				A72785831F86D0590042878B /* GoogleService-Info.plist */,
 			);
 			path = CopenhagenRun;
 			sourceTree = "<group>";
@@ -203,10 +211,19 @@
 			path = CopenhagenRunUITests;
 			sourceTree = "<group>";
 		};
+		A72785801F8418B60042878B /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				A727857E1F8418B20042878B /* UIView.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		A72816011F82DCA000B44712 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				A72815FF1F82DBFD00B44712 /* Colors.swift */,
+				A72785851F86D12F0042878B /* Constants.swift */,
 				A72816041F82DDB200B44712 /* LoggerPlugin.swift */,
 			);
 			path = Common;
@@ -374,6 +391,7 @@
 				8C4F55A71F1AECE50084009F /* LaunchScreen.storyboard in Resources */,
 				8C4F55A41F1AECE50084009F /* Assets.xcassets in Resources */,
 				8C4F55A21F1AECE50084009F /* Main.storyboard in Resources */,
+				A72785841F86D0590042878B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4723A1BD466DF6FA130875AF /* [CP] Embed Pods Frameworks */ = {
@@ -442,7 +460,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0E7CDB0882AD8292B14627B /* [CP] Embed Pods Frameworks */ = {
@@ -515,10 +533,12 @@
 				A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */,
 				455106F51F8414A100AAC254 /* User.swift in Sources */,
 				A727857B1F84131E0042878B /* LoginViewController.swift in Sources */,
+				A72785861F86D12F0042878B /* Constants.swift in Sources */,
 				458D87F11F86C7FB005EAE0B /* CycleCollectionViewCell.swift in Sources */,
 				458D87ED1F86B835005EAE0B /* HomeViewController.swift in Sources */,
 				8C4F559F1F1AECE50084009F /* ExerciseViewController.swift in Sources */,
 				A72816001F82DBFD00B44712 /* Colors.swift in Sources */,
+				A727857F1F8418B20042878B /* UIView.swift in Sources */,
 				8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
