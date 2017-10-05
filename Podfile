@@ -8,6 +8,7 @@ target 'CopenhagenRun' do
   pod 'UICircularProgressRing'
   pod 'RealmSwift', '~> 2.10.1'
   pod 'Result'
+  pod 'Firebase'
 
   # Pods for CopenhagenRun
 
