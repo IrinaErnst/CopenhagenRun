@@ -9,14 +9,16 @@
 import UIKit
 import UICircularProgressRing
 
-class ExerciseViewController: UIViewController, UICircularProgressRingDelegate {
+class ExerciseViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var progressRing: UICircularProgressRingView!
     
+    // MARK: - Properties
     let progressRing1: UICircularProgressRingView? = UICircularProgressRingView()
     let progressRing2: UICircularProgressRingView? = UICircularProgressRingView()
     
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +57,7 @@ class ExerciseViewController: UIViewController, UICircularProgressRingDelegate {
         progressRing.delegate = self
     }
     
+    // MARK: - IBActions
     @IBAction func startButtonPressed(_ sender: Any) {
         
         // Animate the views
@@ -80,16 +83,36 @@ class ExerciseViewController: UIViewController, UICircularProgressRingDelegate {
         // This has a max value of 10 so we set this accordingly and the view calculates how the progress should look
        // ring3.setProgress(value: 6.52, animationDuration: 6)
     }
-        
+    
+    
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// MARK: - Collection View Delegate
+extension ExerciseViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellWidth = collectionView.frame.width/6-3 // we make room for 6 cells to be visible at any time, minus small padding
+        
+        return CGSize(width: cellWidth, height: cellWidth)
     }
     
-    // The delegate method!
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4 // as default 4, but user could change it
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = UICollectionViewCell()
+        
+        return cell
+    }
+}
+
+// MARK: - Circular Progress Delegate
+extension ExerciseViewController: UICircularProgressRingDelegate {
+    
     func finishedUpdatingProgress(forRing ring: UICircularProgressRingView) {
         print("From delegate: Ring finished. YAY")
     }
 }
-

@@ -134,6 +134,13 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		458D87EE1F86C61B005EAE0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8C4F55901F1AECE50084009F = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +171,7 @@
 				455106F11F840C7600AAC254 /* Models */,
 				A728160A1F82DE2D00B44712 /* Protocols */,
 				A728160F1F82DEBA00B44712 /* Services */,
+				458D87EE1F86C61B005EAE0B /* Views */,
 				A72816021F82DCAB00B44712 /* ViewControllers */,
 				A72816031F82DCC200B44712 /* Resourses */,
 				8C4F55A81F1AECE50084009F /* Info.plist */,
