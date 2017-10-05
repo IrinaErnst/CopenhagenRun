@@ -93,17 +93,18 @@ class ExerciseViewController: UIViewController {
 }
 
 // MARK: - Collection View Delegate
-extension ExerciseViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ExerciseViewController: UICollectionViewDelegate, UICollectionViewDataSource /*UICollectionViewDelegateFlowLayout*/ {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cellWidth = collectionView.frame.width/6-3 // we make room for 6 cells to be visible at any time, minus small padding
-        
-        return CGSize(width: cellWidth, height: cellWidth)
-    }
+    // For now this is set in IB but considering different sizes it will have to be in code
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let cellWidth = collectionView.frame.width/6 // we make room for 6 cells to be visible at any time
+//
+//        return CGSize(width: cellWidth, height: cellWidth)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4 // as default 4, but user could change it
+        return 6 // Default would be 4, but user could change it
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
