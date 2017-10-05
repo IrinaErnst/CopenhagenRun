@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ExerciseViewController.swift
 //  CopenhagenRun
 //
 //  Created by Irina Ernst on 7/15/17.
@@ -9,7 +9,7 @@
 import UIKit
 import UICircularProgressRing
 
-class ViewController: UIViewController, UICircularProgressRingDelegate {
+class ExerciseViewController: UIViewController, UICircularProgressRingDelegate {
 
     @IBOutlet weak var progressRing: UICircularProgressRingView!
     

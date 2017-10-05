@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		455106F31F840CDE00AAC254 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455106F21F840CDE00AAC254 /* Workout.swift */; };
 		455106F51F8414A100AAC254 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455106F41F8414A100AAC254 /* User.swift */; };
+		458D87ED1F86B835005EAE0B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D87EC1F86B835005EAE0B /* HomeViewController.swift */; };
 		8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F559C1F1AECE50084009F /* AppDelegate.swift */; };
-		8C4F559F1F1AECE50084009F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F559E1F1AECE50084009F /* ViewController.swift */; };
+		8C4F559F1F1AECE50084009F /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F559E1F1AECE50084009F /* ExerciseViewController.swift */; };
 		8C4F55A21F1AECE50084009F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4F55A01F1AECE50084009F /* Main.storyboard */; };
 		8C4F55A41F1AECE50084009F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4F55A31F1AECE50084009F /* Assets.xcassets */; };
 		8C4F55A71F1AECE50084009F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4F55A51F1AECE50084009F /* LaunchScreen.storyboard */; };
@@ -49,11 +50,12 @@
 		2CEA5F43497179C6B874A874 /* Pods-CopenhagenRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRun/Pods-CopenhagenRun.release.xcconfig"; sourceTree = "<group>"; };
 		455106F21F840CDE00AAC254 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		455106F41F8414A100AAC254 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		458D87EC1F86B835005EAE0B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		65704CCE955350F3A6A0B6B8 /* Pods-CopenhagenRunTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRunTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRunTests/Pods-CopenhagenRunTests.release.xcconfig"; sourceTree = "<group>"; };
 		78898353B33F01C9AAFEB079 /* Pods-CopenhagenRunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopenhagenRunTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopenhagenRunTests/Pods-CopenhagenRunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C4F55991F1AECE50084009F /* CopenhagenRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopenhagenRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4F559C1F1AECE50084009F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C4F559E1F1AECE50084009F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C4F559E1F1AECE50084009F /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		8C4F55A11F1AECE50084009F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C4F55A31F1AECE50084009F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C4F55A61F1AECE50084009F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,8 +201,9 @@
 		A72816021F82DCAB00B44712 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8C4F559E1F1AECE50084009F /* ViewController.swift */,
 				A727857A1F84131E0042878B /* LoginViewController.swift */,
+				458D87EC1F86B835005EAE0B /* HomeViewController.swift */,
+				8C4F559E1F1AECE50084009F /* ExerciseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -497,7 +500,8 @@
 				A72816051F82DDB200B44712 /* LoggerPlugin.swift in Sources */,
 				455106F51F8414A100AAC254 /* User.swift in Sources */,
 				A727857B1F84131E0042878B /* LoginViewController.swift in Sources */,
-				8C4F559F1F1AECE50084009F /* ViewController.swift in Sources */,
+				458D87ED1F86B835005EAE0B /* HomeViewController.swift in Sources */,
+				8C4F559F1F1AECE50084009F /* ExerciseViewController.swift in Sources */,
 				A72816001F82DBFD00B44712 /* Colors.swift in Sources */,
 				8C4F559D1F1AECE50084009F /* AppDelegate.swift in Sources */,
 			);
