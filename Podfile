@@ -9,6 +9,9 @@ target 'CopenhagenRun' do
   pod 'RealmSwift', '~> 2.10.1'
   pod 'Result'
   pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
   # Pods for CopenhagenRun
 
