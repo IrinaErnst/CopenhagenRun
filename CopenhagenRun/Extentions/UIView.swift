@@ -29,7 +29,7 @@ extension UIView {
     func createToolbarWithDoneButton() -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 44)
-        toolbar.tintColor = Colors.trnPigeonBlue
+        toolbar.tintColor = Colors.green
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                        target: self,
                                        action: #selector(dismissKeyboard))
@@ -41,7 +41,7 @@ extension UIView {
         return toolbar
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         self.endEditing(true)
     }
     
